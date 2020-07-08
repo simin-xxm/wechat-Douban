@@ -1,0 +1,20 @@
+
+
+<view class="hade" style="height:{{customBar}}px;padding-top:{{statusBar}}px"> <text>豆瓣评分</text> </view>
+<!-- 搜索框 -->
+<view class="select">
+  <view>
+    <image src="../../image/magnifier.png"></image>
+    <text style="font-size: 28rpx;">搜索</text>
+  </view>
+</view>
+
+<swiper
+  autoplay interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}"  circular="{{circular}}"  bindchange="swiperBindchange"
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <view  class="slide-image {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}"></view>
+    </swiper-item>
+  </block>
+</swiper>

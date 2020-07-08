@@ -1,0 +1,31 @@
+
+<view class="hade" style="height:{{customBar}}px;padding-top:{{statusBar}}px"> <image bindtap="back" src="../../../../image/fx-left.png" /> <text>评论页</text> </view>
+<!-- 搜索框 -->
+<view class="select">
+  <view>
+    <image  src="../../../../image/magnifier.png"></image>
+    <text style="font-size: 28rpx;">搜索</text>
+  </view>
+  <view bindtap="jumpPing">
+      <image src="../../../../image/pinglun.png" />
+      <text>添加一条评论</text>
+  </view>
+</view>
+
+<scroll-view scroll-y="{{true}}" style=" width:100%; height: calc(100vh - ({{customBar}}px + 80rpx));">
+    <!-- <text>{{cs}} \n</text> -->
+<view class="evaluation">
+    <view class="tle"> 短评（3812739）</view>
+    <view class="eva-box" wx:for="{{hero}}" wx:key="key" wx:for-item="c">
+        <view class="boxa">
+            <view class="icon" style="background-image:url('{{c.img}}')"></view> 
+        </view>
+        <view class="boxb">
+            <view> <text>{{c.name}}</text><image wx:for="{{4}}" wx:key="key" src="../.././../../image/star.png" /> <image  src="../.././../../image/star_s.png" /></view> 
+            <view><text>2020-0512</text> <text > 15:17:35</text> </view>
+            <view>{{c.lines}}</view>
+        </view>
+    </view>
+</view>
+</scroll-view>
+

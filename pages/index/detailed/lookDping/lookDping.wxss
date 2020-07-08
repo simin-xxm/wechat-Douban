@@ -1,0 +1,4 @@
+
+.select{display: flex;justify-content: space-between;}
+.select view:first-child{width: 65%;}
+.select view:last-child{width: 30%;height: 70%;display: flex;justify-content: center;align-items: center;font-size: 25rpx;color: white;}

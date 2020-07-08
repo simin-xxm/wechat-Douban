@@ -1,0 +1,27 @@
+
+
+<view class="hade" style="height:{{customBar}}px;padding-top:{{statusBar}}px"> <image bindtap="back" src="../../../../image/fx-left.png" /> <text>影评页</text> </view>
+<!-- 搜索框 -->
+
+
+<view class="select">
+  <view>
+    <image  src="../../../../image/magnifier.png"></image>
+    <text style="font-size: 28rpx;">搜索</text>
+  </view>
+</view>
+
+<scroll-view scroll-y style="width:100%; height: calc(100vh - ({{customBar}}px + 80rpx));">
+
+<view class="movie-review">
+    <view class="review-in" wx:for="{{hero}}" wx:key="key">
+        <view ><text >{{item.lines}}</text> </view>
+        <view > 
+            <text style="font-size:24rpx">{{item.name}}</text>
+            <image wx:for="{{5}}" wx:key="key" src="../.././../../image/star.png" />
+            <text style="margin-left:10px;font-size:20rpx">231 有用</text> 
+        </view>
+    </view>
+</view>
+
+</scroll-view>

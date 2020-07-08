@@ -1,0 +1,44 @@
+
+
+
+<view class="hade" style="height:{{customBar}}px;padding-top:{{statusBar}}px"> <image bindtap="back" src="../../../../image/fx-left.png" /> <text>添加评论页</text> </view>
+<!-- 搜索框 -->
+
+
+<view class="select">
+  <view>
+    <image  src="../../../../image/magnifier.png"></image>
+    <text style="font-size: 28rpx;">搜索</text>
+  </view>
+</view>
+
+<view class="comment">
+
+    <!-- <text style="font-size:40rpx" >{{names}}</text> -->
+    <!-- <text style="font-size:40rpx" >{{cs}}</text> -->
+    <!-- <text >{{name}}</text>
+    <text>{{img}}</text>
+    <text>{{lines}}</text> -->
+
+    <view >
+        <text >英雄名称：</text> 
+        <input bindblur="inputname" type="text" data-type="name" placeholder="艾瑞利亚" confirm-type="next" auto-focus maxlength="10" placeholder-class="input-placeholder" />
+        <image src="../../../../image/name.png" />
+    </view>
+    
+    <view >
+        <text >英雄头像：</text> 
+        <input bindblur="inputimg" type="text"  data-type="img" confirm-type="next"  />
+        <image src="../../../../image/host.png" />
+    </view>
+
+    <view >
+        <text >英雄台词：</text> 
+        <input bindblur="inputlines" type="text" data-type="lines" confirm-type="send"  />
+        <image src="../../../../image/icon.png" />
+    </view>
+
+    <button bindtap="sumb">
+        提交
+    </button>
+</view>

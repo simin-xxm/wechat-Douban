@@ -1,0 +1,25 @@
+
+<view class="hade" style="height:{{customBar}}px;padding-top:{{statusBar}}px"> <text>豆瓣评分</text> </view>
+
+<block wx:if="{{login}}">
+    <!-- 头像背景图 -->
+    <view class="comment" style="background-image: url('{{avatarUrl}}');"></view> 
+     <!-- 头像 -->
+    <view class="icon"> 
+        <view style="background-image: url('{{avatarUrl}}');"></view>
+        <view>{{nickName}}</view>
+    </view>
+</block>
+
+<block wx:else>
+	<!-- 登录按钮 -->
+	<view class="loginButton">
+		<!-- 在本小程序中只实现了微信登录 -->
+		<view class="wechatLogin">
+			<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+				<text class="icon-message"></text> 微信登录
+			</button>
+		</view>
+	</view>
+
+</block>

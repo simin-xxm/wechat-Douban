@@ -1,0 +1,116 @@
+
+
+<!-- 自定义头部 -->
+<view class="hade" style="height:{{customBar}}px;padding-top:{{statusBar}}px"> 
+  <image bindtap="back" src="../../../image/fx-left.png" ></image> <text>{{movie[id].title}}</text> 
+</view>
+<!-- 头部内容 -->
+<block wx:if="{{showitem}}">
+<scroll-view scroll-y style=" width:100%; height: calc(100vh - ({{customBar}}px) + {{statusBar}}px);">
+<view class="con-top">
+  <view class="icon" style="background-image: url('{{movie[id].images.large}}');"></view>
+  <view class="eachcontent">
+    <view class="content-type">
+      <view class="imgs" style="background-image: url('{{movie[id].images.large}}');"></view>
+      <view class="panelcon">
+        <view class="txt">{{movie[id].title}}</view>
+        <view class="panelcon_box">
+          <view class="panelcon_no">6.232</view>
+          <view class="box-one" >
+            <view>
+              <image wx:for="{{5}}" wx:key="key" src="../../../image/star.png" />
+              <image src="../../../image/star_s.png" />
+            </view>
+            <view>{{movie[id].id}} 人评价</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 细节 -->
+
+
+
+<view class="content">
+  <text style="margin-right:10px;">{{movie[id].durations[0]}}</text> <text style="margin-right:10px;">{{movie[id].genres[0]}}</text> <text>{{movie[id].genres[1]}} \n</text>
+  <text>{{movie[id].pubdates[0]}} 上映 \n</text>
+    <view class="scroll_box"> 
+        <scroll-view  scroll-x>
+        <view class="item_list">
+            <view style="background-image: url('{{movie[id].directors[0].avatars.large}}');"></view>
+            <text style="font-size: 25rpx;font-family: '楷体';">{{movie[id].directors[0].name}}（导演）\n</text>
+            <text style="font-size: 20rpx;color: #ccc;font-family: Arial">{{movie[id].directors[0].name_en}}</text>
+        </view>
+        <view class="item_list"  wx:key="key" wx:for="{{movie[id].casts}}">
+            <view style="background-image: url('{{movie[id].casts[index].avatars.large}}');"></view>
+            <text style="font-size: 25rpx;font-family: '楷体';">{{movie[id].casts[index].name}}（演员）\n</text>
+            <text style="font-size: 20rpx;color: #ccc;font-family: Arial">{{movie[id].casts[index].name_en}}</text>
+        </view>
+        </scroll-view>
+    </view>
+  <view class="btm">
+    <view>想看</view>
+    <view>看过</view>
+  </view>
+</view>
+
+<!-- 剧情介绍 -->
+<view class="plot">
+  <view class="tle">{{movie[id].title}}介绍</view>
+  <view class="plotcon" style="{{isok == 1? '-webkit-line-clamp:3;':'-webkit-line-clamp:10'}}">
+      天不生你李淳罡剑道万古如长夜 天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜
+      天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜
+      天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜
+      天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜
+      天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜天不生你李淳罡剑道万古如长夜
+  </view>
+  <view bindtap="switch">
+    {{isok== 1? '展开':'关闭'}} <image src="{{isok== 1?  '../../../image/xia.png':'../../../image/shang.png'}}" />
+  </view>
+</view>
+
+<!-- 短评 -->
+
+<view class="evaluation">
+    <view class="tle"> 短评（3812739）</view>
+    <view class="eva-box" wx:for="{{hero}}" wx:key="key" wx:for-item="c">
+        <view class="boxa">
+            <view class="icon" style="background-image:url('{{c.img}}')"></view> 
+        </view>
+        <view class="boxb">
+            <view> <text>{{c.name}}</text><image wx:for="{{4}}" src="../../../image/star.png" /> <image  src="../../../image/star_s.png" /></view> 
+            <view><text>2020-0512</text> <text > 15:17:35</text> </view>
+            <view>{{c.lines}}</view>
+        </view>
+    </view>
+</view>
+<view class="look" bindtap="lookDping">查看更多影评</view>
+
+<view class="movie-review">
+    <view class="review-in">
+        <view ><text >均衡存乎万物之间。我的剑刃愿为你效劳。均衡存乎万物之间。 我的剑刃愿为你效劳。均衡存乎万物之间。 我的剑刃愿为你效劳。</text> </view>
+        <view > 
+            <text style="font-size:24rpx">艾瑞利亚</text>
+            <image wx:for="{{5}}" wx:key="key" src="../../../image/star.png" />
+            <text style="margin-left:10px;font-size:20rpx">231 有用</text> 
+        </view>
+    </view>
+    <view class="review-in">
+        <view ><text >你也要来玩吗?很好玩的哦 再烦我就打你哦 爱玩火法的火法的火球 你看见我的小熊了吗</text> </view>
+        <view > 
+            <text style="font-size:24rpx">anni</text>
+            <image wx:for="{{5}}" wx:key="key" src="../../../image/star.png" />
+            <text style="margin-left:10px;font-size:20rpx">231 有用</text> 
+        </view>
+    </view>
+</view>
+<view class="look" bindtap="lookYping">查看更多影评</view>
+
+</scroll-view>
+
+</block>
+<block wx:else>
+    
+</block>

@@ -1,0 +1,130 @@
+
+<!-- 豆瓣评分 -->
+
+<!-- 自定义头部 -->
+
+<view class="hade" style="height:{{customBar}}px;padding-top:{{statusBar}}px"> <text>豆Bna评分</text> </view>
+<!-- 搜索框 -->
+<view class="select">
+  <view>
+    <image src="../../image/magnifier.png"></image>
+    <text style="font-size: 28rpx;">搜索</text>
+  </view>
+</view>
+
+<!-- 内容 -->
+<block wx:if="{{showitem}}">
+<scroll-view  scroll-y class="scrollType" style="  height: calc(100vh - ({{customBar}}px + 80rpx));" >
+
+
+<!-- 排行 -->
+<view class="contents">
+  <view class="con_top"> <text>{{top250Movietitle}}</text> <text>更多 ></text> </view>
+  <swiper autoplay interval="3300" duration="{{duration}}" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}"  circular="{{circular}}"  bindchange="swipertop">
+        <swiper-item  bindtap="cc" data-type="top" data-movie="{{top}}" wx:for="{{top}}" wx:key="key" data-id="{{index}}">
+            <view  class="slide-image {{currentSwipertop == index ? 'zoom-in' : 'zoom-out'}}">
+                <view style="background-image: url('{{item.images.large}}');"></view>
+                <view class="txta" style="">{{item.title}} \n</view>
+                <view class="txtb" style="">{{item.pubdates}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+
+
+
+<!-- 即将上映 -->
+<view class="contents">
+  <view class="con_top"> <text>{{loadMovie}}</text> <text>查看更多 ></text> </view>
+    <swiper
+    autoplay interval="2500" duration="{{duration}}" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}"  circular="{{circular}}"  bindchange="swipermovie"
+    >
+        <swiper-item  bindtap="cc" wx:for="{{movie}}" data-type="load" wx:key="key" data-id="{{index}}">
+            <view  class="slide-image {{currentSwipermovie == index ? 'zoom-in' : 'zoom-out'}}">
+                <view style="background-image: url('{{item.images.large}}');"></view>
+                <view class="txta" style="">{{item.title}} \n</view>
+                <view class="txtb" style="">{{item.pubdates}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+
+
+
+
+<!-- 正在热映 -->
+<view class="contents">
+  <view class="con_top"> <text>{{comingMovietitle}}</text> <text>更多 ></text> </view>
+    <swiper autoplay interval="2800" duration="{{duration}}" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}"  circular="{{circular}}"  bindchange="swipercoming">
+        <swiper-item  bindtap="cc" data-type="coming"  data-movie="{{coming}}" wx:for="{{coming}}" wx:key="key" data-id="{{index}}">
+         <view  class="slide-image {{currentSwipercoming == index ? 'zoom-in' : 'zoom-out'}}">
+            <view style="background-image: url('{{item.images.large}}');"></view>
+            <view class="txta" style="">{{item.title}} \n</view>
+            <view class="txtb" style="">{{item.pubdates}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+
+
+<!-- ******************************************************************************************* -->
+
+
+
+
+
+
+
+<!-- 即将上映 -->
+<!-- <view class="content">
+  <view class="con_top"> <text>{{loadMovie}}</text> <text>查看更多 ></text> </view>
+  <view class="scroll_box"> 
+    <scroll-view class="scroll-view_x" scroll-x>
+      <view class="item_list" bindtap="cc" data-type="load" data-movie="{{movie}}" wx:for="{{movie}}" wx:key="key" data-id="{{index}}">
+        <view style="background-image: url('{{item.images.large}}');"></view>
+        <view class="txta" style="">{{item.title}} \n</view>
+        <view class="txtb" style="">上映时间： {{item.pubdates}}</view>
+      </view>
+      <view class="">
+        
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
+
+<!-- 正在热映 -->
+<!-- <view class="content">
+  <view class="con_top"> <text>{{comingMovietitle}}</text> <text>更多 ></text> </view>
+  <view class="scroll_box"> 
+    <scroll-view class="scroll-view_x" scroll-x>
+      <view class="item_list" bindtap="cc" data-type="coming"  data-movie="{{coming}}" wx:for="{{coming}}" wx:key="key" data-id="{{index}}">
+        <view style="background-image: url('{{item.images.large}}');"></view>
+        <view class="txta" style="">{{item.title}} \n</view>
+        <view class="txtb" style="">上映时间： {{item.pubdates}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
+
+
+
+<!-- 排行 -->
+<!-- <view class="content">
+  <view class="con_top"> <text>{{top250Movietitle}}</text> <text>更多 ></text> </view>
+  <view class="scroll_box"> 
+    <scroll-view class="scroll-view_x" scroll-x>
+      <view class="item_list" bindtap="cc" data-type="top" data-movie="{{top}}" wx:for="{{top}}" wx:key="key" data-id="{{index}}">
+        <view style="background-image: url('{{item.images.large}}');"></view>
+        <view class="txta" style="">{{item.title}} \n</view>
+        <view class="txtb" style="">上映时间： {{item.pubdates}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view> -->
+
+
+</scroll-view>
+</block>
+<block wx:else>
+
+</block>

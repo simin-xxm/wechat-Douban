@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/admin/admin",
+    "pages/index/detailed/lookDping/lookDping",
+    "pages/index/detailed/comment/comment",
+    "pages/index/detailed/lookYping/lookYping",
+    "pages/index/detailed/detailed",
+    "pages/index/seemore/seemore"
+  ],
+  "window":{
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#00CC66",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "电影",
+      "iconPath": "/image/movie-select.png",
+      "selectedIconPath": "/image/movie-icon.png"
+    },
+    {
+      "pagePath": "pages/admin/admin",
+      "text": "我的",
+      "iconPath": "/image/user-select.png",
+      "selectedIconPath": "/image/user-icon.png"
+    }
+  ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
